@@ -38,7 +38,7 @@ load_dotenv()
 #     return "Weather information not available."
 
 
-llm = ChatGroq(model="llama-3.1-8b-instant")
+llm = ChatGroq(model="llama-3.3-70b-versatile")
 # tools = [weather_search]
 
 tools = [TavilySearch(max_results=3)]
