@@ -10,7 +10,6 @@ from langchain_core.messages import SystemMessage
 # from tavily import TavilyClient
 
 from langchain_tavily import TavilySearch
-from langchain_community.tools.tavily_search import TavilySearchResults
 
 load_dotenv()
 
@@ -42,8 +41,7 @@ load_dotenv()
 llm = ChatGroq(model="llama-3.1-8b-instant")
 # tools = [weather_search]
 
-# tools = [TavilySearch()]
-tools = [TavilySearchResults()]
+tools = [TavilySearch(max_results=3)]
 agent = create_agent(model=llm, tools=tools)
 
 
